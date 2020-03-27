@@ -8,9 +8,9 @@
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
-         <item name="android:windowBackground">
+         <!-- <item name="android:windowBackground">
             @drawable/background_splash
-        </item>
+        </item> -->
         <!-- <item name="android:statusBarColor">
             @color/primary
         </item> -->
