@@ -1,8 +1,6 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
 
-import './config/ReactotronConfig';
-
 export default function App() {
   return (
     <>
