@@ -1,7 +1,14 @@
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+  Button,
+  Linking,
+} from 'react-native';
 
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
@@ -12,6 +19,20 @@ export default function Detail() {
   function navigateBack() {
     navigation.goBack();
   }
+
+  function sendEmail() {
+    const emailContent = {
+      email: 'support@domain.com',
+      subject: 'Test',
+      body: 'test',
+    };
+
+    Linking.openURL(
+      `mailto:${emailContent.email}?subject=${emailContent.subject}&body=${emailContent.body}`,
+    );
+  }
+
+  function sendWhatsapp() {}
 
   return (
     <View style={styles.container}>
@@ -45,7 +66,7 @@ export default function Detail() {
             <Text style={styles.actionText}>WhatsApp</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.action} onPress={() => {}}>
+          <TouchableOpacity style={styles.action} onPress={sendEmail}>
             <Text style={styles.actionText}>E-mail</Text>
           </TouchableOpacity>
         </View>
